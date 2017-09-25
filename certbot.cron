@@ -1,1 +1,1 @@
-30 00 * * 0 /usr/bin/certbot renew
+30 00 * * 0 /usr/local/bin/letsencrypt.sh

@@ -1,5 +1,6 @@
 gridftp-server:
     image: gitlab-registry.cern.ch/fts/gridftp:latest
+    net: "host"
     ports:
         - "0.0.0.0:80:80"
         - "0.0.0.0:2811:2811"

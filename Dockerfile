@@ -24,6 +24,9 @@ ADD "certbot.cron" "/etc/cron.d/"
 ADD "letsencrypt.sh" "/usr/local/bin"
 EXPOSE 80
 
+ADD "https://letsencrypt.org/certs/isrgrootx1.pem.txt" "/etc/grid-security/certificates/isrgrootx1.pem"
+RUN ln -s "/etc/grid-security/certificates/isrgrootx1.pem" "/etc/grid-security/certificates/4042bcee.0"
+
 # Supervisord config file
 ADD "supervisord.ini" "/etc/supervisord.ini"
 
