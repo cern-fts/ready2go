@@ -16,10 +16,13 @@ ADD "gridftp.conf" "/etc/gridftp.conf"
 EXPOSE 2811 50000-50200
 
 # Grid map file
-VOLUME "/etc/edg-mkgridmap.conf" "/etc/localgridmap.conf"
+ADD "edg-mkgridmap.cron" "/etc/cron.d"
 
-# Host cert and key
-VOLUME "/etc/grid-security/hostcert.pem" "/etc/grid-security/hostkey.pem"
+# Let's Encrypt
+RUN yum install -y certbot
+ADD "certbot.cron" "/etc/cron.d/"
+ADD "letsencrypt.sh" "/usr/local/bin"
+EXPOSE 80
 
 # Supervisord config file
 ADD "supervisord.ini" "/etc/supervisord.ini"
