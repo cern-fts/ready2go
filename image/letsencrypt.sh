@@ -15,7 +15,7 @@ fi
 
 # When running against Let's Encrypt staging environment,
 # add the fake root CA
-if [[ -n "${TESTCERT}" ]]; then
+if [[ -n "${TESTCERT}" ]] && [[ ! -f "/etc/grid-security/certificates/fakelerootx1.pem" ]]; then
     curl "https://letsencrypt.org/certs/fakelerootx1.pem" > "/etc/grid-security/certificates/fakelerootx1.pem"
     fakehash=$(openssl x509 -hash -noout -in "/etc/grid-security/certificates/fakelerootx1.pem")
     ln -s "/etc/grid-security/certificates/fakelerootx1.pem" "/etc/grid-security/certificates/${fakehash}.0"
