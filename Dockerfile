@@ -11,8 +11,7 @@ RUN yum install -y lcg-CA
 RUN yum install -y edg-mkgridmap globus-gridftp-server globus-gridftp-server-progs
 RUN yum install -y supervisor cronie
 
-# GridFTP configuration files, and ports
-ADD "image/gridftp.conf" "/etc/gridftp.conf"
+# GridFTP ports
 EXPOSE 2811 50000-50200
 
 # Grid mapfile

@@ -57,6 +57,10 @@ with a "bad" signature from the staging authority.
 This is useful for testing, and to avoid rate limitation on the production service. You can edit
 `docker-compose.yml` once you are satisfied with your settings, and let the variable `TESTCERT` be empty.
 
+Also, by default, only `/srv` is mounted inside the container, and served by the GridFTP daemon.
+If you want to replace it (by `/pnfs` for instance), you will need to modify `config/gridftp.conf` (restrict\_paths)
+and `docker-compose.yml` (volumes).
+
 ## Notes
 Let's Encrypt certificates may not be trusted by your UI installation. If you have control over it, you can
 install the package `ca_letsencrypt` and/or `ca_letsencrypt-fake` (only while testing) provided

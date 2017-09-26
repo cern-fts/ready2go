@@ -14,5 +14,6 @@ gridftp-server:
         - /etc/group:/etc/group
         - ./config/edg-mkgridmap.conf:/etc/edg-mkgridmap.conf
         - ./config/localgridmap.conf:/etc/localgridmap.conf
+        - ./config/gridftp.conf:/etc/gridftp.conf
         - /srv:/srv
 
