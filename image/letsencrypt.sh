@@ -1,6 +1,10 @@
 #!/bin/bash
 set -ex
 
+if [[ -z "${DOMAIN}" ]]; then
+    DOMAIN=`hostname -f`
+fi
+
 # Create/renew
 /usr/bin/certbot certonly --non-interactive --renew-by-default ${TESTCERT} --standalone \
     --post-hook="chmod 0400 /etc/letsencrypt/live/${DOMAIN}/privkey.pem" \
