@@ -11,7 +11,7 @@ services:
         environment:
             - TESTCERT=--test-cert
             - EMAIL=example@example.com
-            - DOMAIN=dmc-build-01.cern.ch
+            - DOMAIN=
         volumes:
             - /etc/passwd:/etc/passwd
             - /etc/group:/etc/group
