@@ -2,7 +2,7 @@ version: "2"
 
 services:
     gridftp-server:
-        image: gitlab-registry.cern.ch/fts/gridftp:latest
+        image: gitlab-registry.cern.ch/fts/ready-to-go/gridftp:latest
         network_mode: "host"
         ports:
             - "0.0.0.0:80:80"
