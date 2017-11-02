@@ -19,3 +19,12 @@ build-gridftp:
     tags:
       - docker
 
+build-ftp:
+    stage: build
+    script:
+        - cd ftp
+        - docker build --pull -t "${CI_REGISTRY_IMAGE}/ftp" .
+        - docker push "${CI_REGISTRY_IMAGE}/ftp"
+    tags:
+        - docker
+
