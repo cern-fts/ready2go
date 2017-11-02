@@ -3,21 +3,19 @@ image: docker:latest
 stages:
 - build
 
-variables:
-    CONTAINER_IMAGE: gitlab-registry.cern.ch/fts/gridftp:latest
-
 before_script:
     - docker info
-    - docker login -p "${REGISTRY_PASSWD}" -u "${REGISTRY_USER}" gitlab-registry.cern.ch
+    - docker login -p "${REGISTRY_PASSWD}" -u "${REGISTRY_USER}" "${CI_REGISTRY}"
     
 after_script:
-    - docker logout gitlab-registry.cern.ch
+    - docker logout "${CI_REGISTRY}"
 
-build:
+build-gridftp:
     stage: build
     script:
-      - docker build --pull -t $CONTAINER_IMAGE .
-      - docker push $CONTAINER_IMAGE
+      - cd gridftp
+      - docker build --pull -t "${CI_REGISTRY_IMAGE}/gridftp" .
+      - docker push "${CI_REGISTRY_IMAGE}/gridftp"
     tags:
       - docker
 
