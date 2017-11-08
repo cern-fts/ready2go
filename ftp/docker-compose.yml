@@ -2,7 +2,7 @@ version: "2"
 
 services:
     ftp-server:
-        image: gitlab-registry.cern.ch/ready-to-go/ftp:latest
+        image: gitlab-registry.cern.ch/fts/ready-to-go/ftp:latest
         privileged: true
         network_mode: "host"
         ports:
