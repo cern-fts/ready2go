@@ -2,7 +2,7 @@ version: "2"
 
 services:
     ftp-server:
-        image: gitlab-registry.cern.ch/storage-containers/ftp:latest
+        image: gitlab-registry.cern.ch/ready-to-go/ftp:latest
         privileged: true
         network_mode: "host"
         ports:
@@ -10,4 +10,3 @@ services:
             - "0.0.0.0:50000-50200:50000-50200"
         volumes:
             - /srv:/var/ftp:ro
-

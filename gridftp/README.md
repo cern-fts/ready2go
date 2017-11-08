@@ -7,7 +7,7 @@ obtain an X509 certificate.
 In this repository you can find both the `Dockerfile` to build the image,
 and a `docker-compose.yml` file to deploy it.
 
-You may use our pre-built image `gitlab-registry.cern.ch/fts/gridftp:latest`,
+You may use our pre-built image `gitlab-registry.cern.ch/fts/ready-to-go/gridftp:latest`,
 and just run it with `docker-compose`.
 
 ## How to run it

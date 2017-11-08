@@ -19,4 +19,3 @@ services:
             - ./config/localgridmap.conf:/etc/localgridmap.conf
             - ./config/gridftp.conf:/etc/gridftp.conf
             - /srv:/srv
-
