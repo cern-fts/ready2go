@@ -20,6 +20,13 @@ For CentOS7 at least, you can install the rpms `docker-compose` and `docker`.
 yum install docker docker-compose
 ```
 
+For RH6, you need to install the rpms `docker-io`, and `docker-compose` via `pip`.
+
+```bash
+yum install docker-io
+pip install docker-compose
+```
+
 The following ports have to be open on your firewall for the image to work:
 
 * `2811`: GridFTP control channel
@@ -49,6 +56,6 @@ To stop the server
 docker-compose down
 ```
 
-By default, only `/srv` is mounted inside the container, and served by the FTP daemon.
+By default, only `/var/ftp` is mounted inside the container, and served by the FTP daemon.
 If you want to replace it (by `/pnfs` for instance), you will need to modify
 `docker-compose.yml`.

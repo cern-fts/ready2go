@@ -21,6 +21,13 @@ For CentOS7 at least, you can install the rpms `docker-compose` and `docker`.
 yum install docker docker-compose
 ```
 
+For RH6, you need to install the rpms `docker-io`, and `docker-compose` via `pip`.
+
+```bash
+yum install docker-io
+pip install docker-compose
+```
+
 The following ports have to be open on your firewall for the image to work:
 
 * `80`: Used by certbot to obtain the X509 certificate
