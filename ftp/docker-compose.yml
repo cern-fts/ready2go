@@ -6,7 +6,7 @@ services:
         privileged: true
         network_mode: "host"
         ports:
-            - "0.0.0.0:21:21"
+            - "0.0.0.0:2811:2811"
             - "0.0.0.0:50000-50200:50000-50200"
         volumes:
             - /srv:/var/ftp:ro
