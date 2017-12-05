@@ -1,30 +1,18 @@
-image: docker:latest
-
-stages:
-- build
-
-before_script:
-    - docker info
-    - docker login -p "${REGISTRY_PASSWD}" -u "${REGISTRY_USER}" "${CI_REGISTRY}"
-    
-after_script:
-    - docker logout "${CI_REGISTRY}"
-
-build-gridftp-le:
-    stage: build
+gridftp-le:
     script:
-      - cd gridftp-le
-      - docker build --pull -t "${CI_REGISTRY_IMAGE}/gridftp-le" .
-      - docker push "${CI_REGISTRY_IMAGE}/gridftp-le"
+        - ""
+    variables:
+        TO: gitlab-registry.cern.ch/fts/ready-to-go/gridftp-le
+        DOCKER_FILE: ftp/Dockerfile
     tags:
-      - docker
+        - docker-image-build
 
-build-ftp:
-    stage: build
+ftp:
     script:
-        - cd ftp
-        - docker build --pull -t "${CI_REGISTRY_IMAGE}/ftp" .
-        - docker push "${CI_REGISTRY_IMAGE}/ftp"
+        - ""
+    variables:
+        TO: gitlab-registry.cern.ch/fts/ready-to-go/ftp
+        DOCKER_FILE: gridftp-le/Dockerfile
     tags:
-        - docker
+        - docker-image-build
 
