@@ -1,0 +1,2 @@
+17 */2 * * * /usr/sbin/edg-mkgridmap --conf=/etc/edg-mkgridmap.conf --output=/etc/grid-security/grid-mapfile --safe --cache —quiet
+

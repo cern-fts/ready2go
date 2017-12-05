@@ -1,9 +1,18 @@
+gridftp:
+    script:
+        - ""
+    variables:
+        TO: gitlab-registry.cern.ch/fts/ready-to-go/gridftp
+        CONTEXT_DIR: gridftp/
+    tags:
+        - docker-image-build
+
 gridftp-le:
     script:
         - ""
     variables:
         TO: gitlab-registry.cern.ch/fts/ready-to-go/gridftp-le
-        DOCKER_FILE: ftp/Dockerfile
+        CONTEXT_DIR: gridftp-le/
     tags:
         - docker-image-build
 
@@ -12,7 +21,7 @@ ftp:
         - ""
     variables:
         TO: gitlab-registry.cern.ch/fts/ready-to-go/ftp
-        DOCKER_FILE: gridftp-le/Dockerfile
+        CONTEXT_DIR: ftp/
     tags:
         - docker-image-build
 

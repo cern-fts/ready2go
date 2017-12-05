@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+    gridftp-server:
+        image: gitlab-registry.cern.ch/fts/ready-to-go/gridftp:latest
+        network_mode: "host"
+        ports:
+            - "0.0.0.0:80:80"
+            - "0.0.0.0:2811:2811"
+            - "0.0.0.0:50000-50200:50000-50200"
+        environment:
+            - TESTCERT=--test-cert
+            - EMAIL=example@example.com
+            - DOMAIN=
+        volumes:
+            - /etc/passwd:/etc/passwd
+            - /etc/group:/etc/group
+            - ./config/edg-mkgridmap.conf:/etc/edg-mkgridmap.conf
+            - ./config/localgridmap.conf:/etc/localgridmap.conf
+            - ./config/gridftp.conf:/etc/gridftp.conf
+            - /srv:/srv
+            - /etc/grid-security/hostcert.pem:/etc/grid-security/hostcert.pem
+            - /etc/grid-security/hostkey.pem:/etc/grid-security/hostkey.pem
+
