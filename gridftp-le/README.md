@@ -1,5 +1,5 @@
-GridFTP Docker Container
-========================
+GridFTP Docker Container (with Let's Encrypt)
+=============================================
 This image is intended to make easier to deploy a GridFTP server to be used by FTS. The image contains
 both the GridFTP server, and [Let's Encrypt](https://letsencrypt.org/) certbot, so at first boot it will
 obtain an X509 certificate.

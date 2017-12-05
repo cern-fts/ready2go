@@ -10,12 +10,12 @@ before_script:
 after_script:
     - docker logout "${CI_REGISTRY}"
 
-build-gridftp:
+build-gridftp-le:
     stage: build
     script:
-      - cd gridftp
-      - docker build --pull -t "${CI_REGISTRY_IMAGE}/gridftp" .
-      - docker push "${CI_REGISTRY_IMAGE}/gridftp"
+      - cd gridftp-le
+      - docker build --pull -t "${CI_REGISTRY_IMAGE}/gridftp-le" .
+      - docker push "${CI_REGISTRY_IMAGE}/gridftp-le"
     tags:
       - docker
 
