@@ -10,3 +10,4 @@ services:
             - "0.0.0.0:50000-50200:50000-50200"
         volumes:
             - /srv:/var/ftp:ro
+        restart: on-failure
