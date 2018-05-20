@@ -45,7 +45,7 @@ ftp-release:
     script:
         - ""
     variables:
-        TO: gitlab-registry.cern.ch/ready-to-go/ftp:"$CI_BUILD_REF_NAME"
+        TO: gitlab-registry.cern.ch/ready-to-go/ftp:$CI_BUILD_REF_NAME
         CONTEXT_DIR: ftp/
     tags:
         - docker-image-build
@@ -57,7 +57,7 @@ gridftp-relase:
     script:
         - ""
     variables:
-        TO:  gitlab-registry.cern.ch/ready-to-go/gridftp:"$CI_BUILD_REF_NAME"
+        TO:  gitlab-registry.cern.ch/ready-to-go/gridftp:$CI_BUILD_REF_NAME
         CONTEXT_DIR: gridftp/
     tags:
         - docker-image-build
@@ -69,7 +69,7 @@ gridftp-le-relaese:
     script:
         - ""
     variables:
-        TO: gitlab-registry.cern.ch/ready-to-go/gridftp-le:"$CI_BUILD_REF_NAME"
+        TO: gitlab-registry.cern.ch/ready-to-go/gridftp-le:$CI_BUILD_REF_NAME
         CONTEXT_DIR: gridftp-le/
     tags:
         - docker-image-build
