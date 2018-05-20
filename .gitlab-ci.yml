@@ -4,11 +4,11 @@ stages:
 
 variables:
   CONTAINER_FTP_TEST_IMAGE: gitlab-registry.cern.ch/fts/ready-to-go/ftp:latest
-  CONTAINER_FTP_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/ftp:$CI_BUILD_REF_NAME
+  CONTAINER_FTP_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/ftp:"$CI_BUILD_REF_NAME"
   CONTAINER_GRIDFTP_TEST_IMAGE: gitlab-registry.cern.ch/fts/ready-to-go/gridftp:latest
-  CONTAINER_GRIDFTP_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/gridftp:$CI_BUILD_REF_NAME
+  CONTAINER_GRIDFTP_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/gridftp:"$CI_BUILD_REF_NAME"
   CONTAINER_GRIDFTPLE_TEST_IMAGE: gitlab-registry.cern.ch/fts/ready-to-go/gridftp-le:latest
-  CONTAINER_GRIDFTPLE_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/gridftp-le:$CI_BUILD_REF_NAME
+  CONTAINER_GRIDFTPLE_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/gridftp-le:"$CI_BUILD_REF_NAME"
 
 ftp:
     stage: build
