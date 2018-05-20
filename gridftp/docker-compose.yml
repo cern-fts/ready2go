@@ -5,7 +5,6 @@ services:
         image: gitlab-registry.cern.ch/fts/ready-to-go/gridftp:latest
         network_mode: "host"
         ports:
-            - "0.0.0.0:80:80"
             - "0.0.0.0:2811:2811"
             - "0.0.0.0:50000-50200:50000-50200"
         environment:
