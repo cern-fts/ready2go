@@ -28,7 +28,6 @@ pip install docker-compose
 
 The following ports have to be open on your firewall for the image to work:
 
-* `80`: Used by certbot to obtain the X509 certificate
 * `2811`: GridFTP control channel
 *  `50000-50200`: GridFTP data channels
 
