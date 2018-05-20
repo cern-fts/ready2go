@@ -11,7 +11,7 @@ variables:
   CONTAINER_GRIDFTPLE_RELEASE_IMAGE: gitlab-registry.cern.ch/ready-to-go/gridftp-le:$CI_BUILD_REF_NAME
 
 ftp:
-   stage: build
+    stage: build
     only:
       - master
     script:
@@ -23,7 +23,7 @@ ftp:
         - docker-image-build
 
 gridftp:
-   stage: build
+    stage: build
     only:
       - master
     script:
@@ -35,7 +35,7 @@ gridftp:
         - docker-image-build
 
 gridftp-le:
-   stage: build
+    stage: build
     only:
       - master
     script:
@@ -47,7 +47,7 @@ gridftp-le:
         - docker-image-build
 
 ftp-release:
-   stage: tag
+    stage: tag
     only:
       - tags
     script:
@@ -59,7 +59,7 @@ ftp-release:
         - docker-image-build
 
 gridftp-relase:
-   stage: tag
+    stage: tag
     only:
       - tags
     script:
@@ -71,7 +71,7 @@ gridftp-relase:
         - docker-image-build
 
 gridftp-le-relaese:
-   stage: tag
+    stage: tag
     only:
       - tags
     script:
