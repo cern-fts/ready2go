@@ -34,7 +34,6 @@ The following ports have to be open on your firewall for the image to work:
 The `iptables` rules are
 
 ```bash
--A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 2811 -j ACCEPT
 -A INPUT -p tcp --dport 50000:50200 -j ACCEPT
 ```
