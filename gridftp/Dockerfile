@@ -5,7 +5,7 @@ RUN yum install -y epel-release
 ADD "http://repository.egi.eu/sw/production/cas/1/current/repo-files/EGI-trustanchors.repo" "/etc/yum.repos.d"
 
 # ROOT CAs
-RUN yum install -y lcg-CA
+RUN yum install -y ca-policy-egi-core
 
 # Server software
 RUN yum install -y edg-mkgridmap globus-gridftp-server globus-gridftp-server-progs
